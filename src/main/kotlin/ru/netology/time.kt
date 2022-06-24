@@ -12,19 +12,17 @@ fun main() {
     println(agoToText(secondsAgoOnline))
 }
 
-fun agoToText(secondsAgoOnline: Int): String {
-    return when {
-        secondsAgoOnline <= MINUTE -> "был(а) только что"
-        secondsAgoOnline <= HOUR -> formatTime(
-            secondsAgoOnline, "минуту", "минуты", "минут"
-        )
-        secondsAgoOnline <= DAY -> formatTime(
-            secondsAgoOnline, "час", "часа", "часов"
-        )
-        secondsAgoOnline <= TWO_DAYS -> "был(а) сегодня"
-        secondsAgoOnline <= THREE_DAYS -> "был(а) вчера"
-        else -> "был(а) давно"
-    }
+fun agoToText(secondsAgoOnline: Int): String = when {
+    secondsAgoOnline <= MINUTE -> "был(а) только что"
+    secondsAgoOnline <= HOUR -> formatTime(
+        secondsAgoOnline, "минуту", "минуты", "минут"
+    )
+    secondsAgoOnline <= DAY -> formatTime(
+        secondsAgoOnline, "час", "часа", "часов"
+    )
+    secondsAgoOnline <= TWO_DAYS -> "был(а) сегодня"
+    secondsAgoOnline <= THREE_DAYS -> "был(а) вчера"
+    else -> "был(а) давно"
 }
 
 fun formatTime(
